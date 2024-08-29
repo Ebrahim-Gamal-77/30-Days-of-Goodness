@@ -1,3 +1,83 @@
 <resources>
     <string name="app_name">Goodness Days</string>
+    <string name="app_headline">30 Days of Goodness</string>
+    <string name="day">Day </string>
+    <string name="show_description">Show Description</string>
+
+<!--    Titles -->
+    <string name="day_1_title">Recite the Quran</string>
+    <string name="day_2_title">Give Charity</string>
+    <string name="day_3_title">Remembrance of Allah</string>
+    <string name="day_4_title">Perform Night Prayer</string>
+    <string name="day_5_title">Make Supplication</string>
+    <string name="day_6_title">Practice Fasting</string>
+    <string name="day_7_title">Watch Islamic Lessons</string>
+    <string name="day_8_title">Help Someone in Need</string>
+    <string name="day_9_title">Visit Relatives</string>
+    <string name="day_10_title">All Prayers in the Mosque</string>
+    <string name="day_11_title">Avoid Bad Habits</string>
+    <string name="day_12_title">Read Hadith</string>
+    <string name="day_13_title">Help Your Parents</string>
+    <string name="day_14_title">Forgive Someone</string>
+    <string name="day_15_title">Make New Islamic Friends</string>
+    <string name="day_16_title">Cook a Meal for Someone</string>
+    <string name="day_17_title">Volunteer Your Time</string>
+    <string name="day_18_title">Read an Islamic Book</string>
+    <!--    Add some content for bulling in this title.-->
+    <string name="day_19_title">Avoid Bullying</string>
+    <string name="day_20_title">Apologize!</string>
+    <string name="day_21_title">Exercise Regularly</string>
+    <string name="day_22_title">Memorize Quran</string>
+    <string name="day_23_title">Read the Biography of the Prophet</string>
+    <!--    Add some content for the poor in this title.-->
+    <string name="day_24_title">Show Mercy to Orphans</string>
+    <string name="day_25_title">Learn Tajweed</string>
+    <!--    This topic needs some photoshop on its photos-->
+    <string name="day_26_title">Morning and Evening Azkar</string>
+    <string name="day_27_title">Pleasure Your Family</string>
+    <string name="day_28_title">Share Islamic Sources</string>
+    <string name="day_29_title">Donate Blood</string>
+    <string name="day_30_title">Teach Someone About Islam</string>
+
+<!--    Sub Titles -->
+    <string name="day_2_sub_title">Sadaqah</string>
+    <string name="day_3_sub_title">Dhikr</string>
+    <string name="day_4_sub_title">Qiyam al-Layl</string>
+    <string name="day_5_sub_title">Dua</string>
+    <string name="day_9_sub_title">Kinship</string>
+
+<!--    Descriptions -->
+    <string name="day_1_description">Spend time each day reading or reciting the Quran. You might set aside 15 minutes in the morning or evening to read a few verses.</string>
+    <string name="day_2_description">Offer financial or material support to those in need. This could be donating money to a local charity, giving food to a food bank, or helping a neighbor with groceries.</string>
+    <string name="day_3_description">Regularly recite phrases of remembrance like \"SubhanAllah\" (Glory be to Allah) and \"Alhamdulillah\" (All praise is due to Allah). Set reminders throughout the day to say these phrases or use a prayer app to help you remember.</string>
+    <string name="day_4_description">Engage in voluntary night prayers, such as Tahajjud, which can be performed after Isha and before Fajr. You might wake up an hour before Fajr to pray and seek closeness to Allah.</string>
+    <string name="day_5_description">Pray for your needs and the needs of others. You can make dua at any time, but dedicating moments after the obligatory prayers or before going to bed can be especially powerful.</string>
+    <string name="day_6_description">Fast during the month of Ramadan or on additional days like Mondays and Thursdays. If you\'re able, consider fasting on the 13th, 14th, and 15th of each lunar month.</string>
+    <string name="day_7_description">Learn from Islamic scholars by watching online lectures or attending local classes. For example, you can follow online platforms like YouTube for lectures or use apps dedicated to Islamic education.</string>
+    <string name="day_8_description">Offer assistance to others, whether it\'s carrying heavy items for a neighbor or providing guidance to someone in need. Small acts of help can make a big difference.</string>
+    <string name="day_9_description">Maintain family ties by visiting or calling your relatives. For instance, you might visit your aunt or uncle, or make a phone call to check on a cousin you haven\'t spoken to in a while.</string>
+    <string name="day_10_description">Whenever possible, attend the five daily prayers in the mosque. This strengthens community bonds and enhances the reward of your prayers.</string>
+    <string name="day_11_description">Identify and work on eliminating negative habits like gossiping or procrastination. Replace them with positive actions like reading or exercising.</string>
+    <string name="day_12_description">Study the sayings and actions of Prophet Muhammad (peace be upon him) to better understand his teachings. You might read from collections like Sahih Bukhari or Sahih Muslim.</string>
+    <string name="day_13_description">Assist your parents with daily tasks, offer to run errands, or spend quality time with them. For example, you might help with cooking dinner or take them to a medical appointment.</string>
+    <string name="day_14_description">Let go of grudges and offer forgiveness to those who have wronged you. This can be done through a heartfelt conversation or simply by mentally releasing any resentment.</string>
+    <string name="day_15_description">Surround yourself with friends who share your values and inspire you to grow spiritually. Attend Islamic lectures or join study groups to meet like-minded individuals.</string>
+    <string name="day_16_description">Prepare and share a meal with someone in your community, such as a neighbor or friend. This can be a simple dish or a special treat.</string>
+    <string name="day_17_description">Offer your time to a local charity or community organization. Volunteering at a food bank, animal shelter, or educational program can be fulfilling.</string>
+    <string name="day_18_description">Study an Islamic book on interpretation (Tafsir) or jurisprudence (Fiqh) to deepen your understanding of the faith. This could involve reading a book or taking an online course.</string>
+    <string name="day_19_description">Avoid bullying others or using harmful language and focus on speaking kindly. Practice self-control and replace negative comments with positive affirmations.</string>
+    <string name="day_20_description">Reach out to anyone you may have hurt or wronged and offer a sincere apology. This can help mend relationships and promote personal growth.</string>
+    <string name="day_21_description">Engage in physical activity to maintain your health. You might go for a daily walk, join a fitness class, or do home workouts.</string>
+    <string name="day_22_description">MDedicate time to memorizing and reviewing Quranic verses. Start with shorter surahs and gradually work your way up to longer ones.</string>
+    <string name="day_23_description">Learn about the life of Prophet Muhammad (peace be upon him) to gain inspiration and guidance. Books like \"Ar-Raheeq Al-Makhtum\" (The Sealed Nectar) can be a good start.</string>
+    <string name="day_24_description">Provide support and compassion to orphans and the less fortunate. This can be through direct aid or involvement in organizations that support these groups.</string>
+    <string name="day_25_description">Study and practice Tajweed, the rules of Quranic pronunciation, to improve your recitation. You might take a course or use online resources to guide you.</string>
+    <!--    This topic needs some photoshop on its photos-->
+    <string name="day_26_description">Recite morning and evening supplications to seek protection and blessings. Incorporate phrases like "Bismillah" and "Hasbunallahu wa ni'mal wakeel" into your daily routine.</string>
+
+    <string name="day_27_description">Create joyful moments with your family through activities like picnics, outings, or giving thoughtful presents.</string>
+    <string name="day_28_description">Distribute Islamic books, videos, or articles to friends or community members. Sharing knowledge can help others learn more about the faith.</string>
+    <string name="day_29_description">If eligible, donate blood to support those in medical need. Blood donations are crucial and can save lives.</string>
+    <string name="day_30_description">Share your knowledge of Islam with others, whether through informal discussions or structured classes. This helps spread understanding and strengthen the community.</string>
+
 </resources>
