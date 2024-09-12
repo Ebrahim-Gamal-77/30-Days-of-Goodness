@@ -22,49 +22,67 @@ val Signika_Negative = FontFamily(
 
 // Set of Material typography styles to start with
 val Typography = Typography(
+    displayLarge = TextStyle(
+        fontFamily = Signika_Negative,
+        fontWeight = FontWeight.Normal,
+        fontSize = 57.sp,
+        lineHeight = 64.sp,
+        letterSpacing = (-0.25).sp
+    ),
     displayMedium = TextStyle(
-    // Still need to fill it
+        fontFamily = Signika_Negative,
+        fontWeight = FontWeight.Normal,
+        fontSize = 45.sp,
+        lineHeight = 52.sp,
+        letterSpacing = 0.sp
+    ),
+    displaySmall = TextStyle(
+        fontFamily = Platypi,
+        fontWeight = FontWeight.Normal,
+        fontSize = 32.sp,
+        lineHeight = 44.sp,
+        letterSpacing = 0.sp
     ),
     headlineLarge = TextStyle(
         fontFamily = Platypi,
-        fontWeight = FontWeight.Normal,
+        fontWeight = FontWeight.Bold,
         fontSize = 32.sp,
         lineHeight = 40.sp,
         letterSpacing = 0.sp
     ),
     headlineMedium = TextStyle(
         fontFamily = Platypi,
-        fontWeight = FontWeight.Medium,
+        fontWeight = FontWeight.Bold,
         fontSize = 28.sp,
         lineHeight = 36.sp,
         letterSpacing = 0.sp
     ),
     headlineSmall = TextStyle(
         fontFamily = Platypi,
-        fontWeight = FontWeight.Medium,
-        fontSize = 24.sp,
+        fontWeight = FontWeight.ExtraBold,
+        fontSize = 26.sp,
         lineHeight = 32.sp,
         letterSpacing = 0.sp
     ),
     titleLarge = TextStyle(
-        fontFamily = Platypi,
+        fontFamily = Signika_Negative,
         fontWeight = FontWeight.Normal,
         fontSize = 22.sp,
         lineHeight = 28.sp,
-        letterSpacing = 0.sp
+        letterSpacing = 1.sp
     ),
     titleMedium = TextStyle(
-        fontFamily = Platypi,
-        fontWeight = FontWeight.Medium,
-        fontSize = 16.sp,
+        fontFamily = Signika_Negative,
+        fontWeight = FontWeight.Bold,
+        fontSize = 18.sp,
         lineHeight = 24.sp,
-        letterSpacing = 0.15.sp
+        letterSpacing = 1.6.sp
     ),
     bodyLarge = TextStyle(
         fontFamily = Signika_Negative,
-        fontWeight = FontWeight.Normal,
+        fontWeight = FontWeight.Medium,
         fontSize = 16.sp,
-        lineHeight = 24.sp,
+        lineHeight = 22.sp,
         letterSpacing = 0.5.sp
     ),
     bodyMedium = TextStyle(

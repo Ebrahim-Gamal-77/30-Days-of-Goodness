@@ -14,24 +14,28 @@ object DaysRepo {
         Day(
             dayNum = 2,
             title = R.string.day_2_title,
+            subTitle = R.string.day_2_sub_title,
             image = R.drawable.charity,
             description = R.string.day_2_description,
         ),
         Day(
             dayNum = 3,
             title = R.string.day_3_title,
+            subTitle = R.string.day_3_sub_title,
             image = R.drawable.dhikr,
             description = R.string.day_3_description,
         ),
         Day(
             dayNum = 4,
             title = R.string.day_4_title,
+            subTitle = R.string.day_4_sub_title,
             image = R.drawable.night_prayer,
             description = R.string.day_4_description,
         ),
         Day(
             dayNum = 5,
             title = R.string.day_5_title,
+            subTitle = R.string.day_5_sub_title,
             image = R.drawable.dua,
             description = R.string.day_5_description,
         ),
@@ -56,6 +60,7 @@ object DaysRepo {
         Day(
             dayNum = 9,
             title = R.string.day_9_title,
+            subTitle = R.string.day_9_sub_title,
             image = R.drawable.kinship,
             description = R.string.day_9_description,
         ),

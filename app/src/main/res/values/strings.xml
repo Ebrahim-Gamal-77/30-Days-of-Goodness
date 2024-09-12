@@ -1,8 +1,10 @@
 <resources>
     <string name="app_name">Goodness Days</string>
     <string name="app_headline">30 Days of Goodness</string>
-    <string name="day">Day </string>
+    <string name="day">Day</string>
     <string name="show_description">Show Description</string>
+    <string name="previous">Previous</string>
+    <string name="next">Next</string>
 
 <!--    Titles -->
     <string name="day_1_title">Recite the Quran</string>
@@ -23,16 +25,13 @@
     <string name="day_16_title">Cook a Meal for Someone</string>
     <string name="day_17_title">Volunteer Your Time</string>
     <string name="day_18_title">Read an Islamic Book</string>
-    <!--    Add some content for bulling in this title.-->
     <string name="day_19_title">Avoid Bullying</string>
     <string name="day_20_title">Apologize!</string>
     <string name="day_21_title">Exercise Regularly</string>
     <string name="day_22_title">Memorize Quran</string>
     <string name="day_23_title">Read the Biography of the Prophet</string>
-    <!--    Add some content for the poor in this title.-->
     <string name="day_24_title">Show Mercy to Orphans</string>
     <string name="day_25_title">Learn Tajweed</string>
-    <!--    This topic needs some photoshop on its photos-->
     <string name="day_26_title">Morning and Evening Azkar</string>
     <string name="day_27_title">Pleasure Your Family</string>
     <string name="day_28_title">Share Islamic Sources</string>
@@ -40,11 +39,11 @@
     <string name="day_30_title">Teach Someone About Islam</string>
 
 <!--    Sub Titles -->
-    <string name="day_2_sub_title">Sadaqah</string>
-    <string name="day_3_sub_title">Dhikr</string>
-    <string name="day_4_sub_title">Qiyam al-Layl</string>
-    <string name="day_5_sub_title">Dua</string>
-    <string name="day_9_sub_title">Kinship</string>
+    <string name="day_2_sub_title">(Sadaqah)</string>
+    <string name="day_3_sub_title">(Dhikr)</string>
+    <string name="day_4_sub_title">(Qiyam al-Layl)</string>
+    <string name="day_5_sub_title">(Dua)</string>
+    <string name="day_9_sub_title">(Kinship)</string>
 
 <!--    Descriptions -->
     <string name="day_1_description">Spend time each day reading or reciting the Quran. You might set aside 15 minutes in the morning or evening to read a few verses.</string>
@@ -72,9 +71,7 @@
     <string name="day_23_description">Learn about the life of Prophet Muhammad (peace be upon him) to gain inspiration and guidance. Books like \"Ar-Raheeq Al-Makhtum\" (The Sealed Nectar) can be a good start.</string>
     <string name="day_24_description">Provide support and compassion to orphans and the less fortunate. This can be through direct aid or involvement in organizations that support these groups.</string>
     <string name="day_25_description">Study and practice Tajweed, the rules of Quranic pronunciation, to improve your recitation. You might take a course or use online resources to guide you.</string>
-    <!--    This topic needs some photoshop on its photos-->
     <string name="day_26_description">Recite morning and evening supplications to seek protection and blessings. Incorporate phrases like "Bismillah" and "Hasbunallahu wa ni'mal wakeel" into your daily routine.</string>
-
     <string name="day_27_description">Create joyful moments with your family through activities like picnics, outings, or giving thoughtful presents.</string>
     <string name="day_28_description">Distribute Islamic books, videos, or articles to friends or community members. Sharing knowledge can help others learn more about the faith.</string>
     <string name="day_29_description">If eligible, donate blood to support those in medical need. Blood donations are crucial and can save lives.</string>
