@@ -22,7 +22,9 @@ import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.sizeIn
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.KeyboardArrowDown
 import androidx.compose.material3.Button
@@ -52,14 +54,14 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.goodnessdays.data.DaysRepo.days
 import com.example.goodnessdays.model.Day
-import com.example.goodnessdays.ui.theme.GoodnessDaysTheme
+import com.example.goodnessdays.ui.theme.GoodnessMonthTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            GoodnessDaysTheme {
+            GoodnessMonthTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     GoodnessApp(
                         modifier = Modifier.padding(innerPadding)
@@ -87,17 +89,24 @@ fun GoodnessApp(
     // done 4 : Add scaffold with app name, and add Display type in typography
 
     // Scaffold With top app bar
-    Scaffold(topBar = { GoodnessTopAppBar(modifier = Modifier.padding(vertical = 2.dp)) }) { paddingValues ->
+    Scaffold(
+        topBar = { GoodnessTopAppBar(modifier = Modifier.padding(top = 2.dp)) },
+    ) { paddingValues ->
         Column(
             modifier = modifier
                 .fillMaxSize()
                 .padding(paddingValues)
+                .animateContentSize()
+                .verticalScroll(rememberScrollState())
         ) {
+
+            // This spacer is to preserve the size of top bar from overlapping
+            Spacer(modifier = Modifier.height(56.dp))
 
             Spacer(modifier = Modifier.weight(1f))
 
             GoodnessCard(day = days[pageNum - 1],
-                modifier = Modifier.offset(y = (-16).dp),
+                modifier = Modifier.offset(y = (-60).dp),
                 descriptionState = showDescription,
                 onCardClick = { showDescription = !showDescription })
 
@@ -146,7 +155,7 @@ fun GoodnessCard(
             style = MaterialTheme.typography.bodyLarge,
             color = MaterialTheme.colorScheme.onBackground,
             modifier = Modifier.padding(
-                start = 22.dp,
+                start = 18.dp,
                 top = 4.dp,
                 bottom = 4.dp
             )
@@ -159,7 +168,7 @@ fun GoodnessCard(
             ),
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(horizontal = 22.dp)
+                .padding(horizontal = 18.dp)
                 .animateContentSize()
                 .clickable(onClick = onCardClick),
         ) {
@@ -309,8 +318,6 @@ fun GoodnessTopAppBar(modifier: Modifier = Modifier) {
                     textAlign = TextAlign.Center
                 )
 
-                Spacer(modifier = modifier)
-
                 Image(
                     painter = if (isSystemInDarkTheme()) painterResource(id = R.drawable.mosque_icon)
                     else painterResource(id = R.drawable.mosque_icon_2),
@@ -341,7 +348,7 @@ fun GoodnessTopAppBar(modifier: Modifier = Modifier) {
 )
 @Composable
 fun GoodnessPreview() {
-    GoodnessDaysTheme {
+    GoodnessMonthTheme(dynamicColor = false) {
 //        GoodnessCard(days[0])
 //        DayButtons()
         GoodnessApp()
