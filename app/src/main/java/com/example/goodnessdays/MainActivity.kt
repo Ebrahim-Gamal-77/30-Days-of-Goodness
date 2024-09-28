@@ -300,13 +300,13 @@ fun DayButtons(
         AnimatedVisibility(
             visible = buttonsAnimationBoolean,
             enter = slideInHorizontally(
-                initialOffsetX = { fullWidth -> -fullWidth }, // From Left to Right
+                initialOffsetX = {-it}, // From Left to Right
                 animationSpec = spring(
                     dampingRatio = Spring.DampingRatioLowBouncy,
                     stiffness = Spring.StiffnessVeryLow,
                     visibilityThreshold = IntOffset.VisibilityThreshold
                 )
-            ) + fadeIn(),
+            ) + fadeIn(animationSpec = tween(durationMillis = 1100)),
         ) {
             Button(
                 modifier = Modifier.size(
@@ -331,13 +331,13 @@ fun DayButtons(
         AnimatedVisibility(
             visible = buttonsAnimationBoolean,
             enter = slideInHorizontally(
-                initialOffsetX = { fullWidth -> fullWidth }, // From Right to Left
+                initialOffsetX = {it}, // From Right to Left
                 animationSpec = spring(
                     dampingRatio = Spring.DampingRatioLowBouncy,
                     stiffness = Spring.StiffnessVeryLow,
                     visibilityThreshold = IntOffset.VisibilityThreshold
                 )
-            ) + fadeIn(),
+            ) + fadeIn(animationSpec = tween(durationMillis = 1100)),
         ) {
             Button(
                 modifier = Modifier.size(
