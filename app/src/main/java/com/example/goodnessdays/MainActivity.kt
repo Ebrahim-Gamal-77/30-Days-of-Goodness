@@ -7,6 +7,13 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.animateContentSize
+import androidx.compose.animation.core.Spring
+import androidx.compose.animation.core.VisibilityThreshold
+import androidx.compose.animation.core.animateFloatAsState
+import androidx.compose.animation.core.spring
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.slideInHorizontally
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -39,6 +46,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
@@ -46,15 +54,18 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import com.example.goodnessdays.data.DaysRepo.days
 import com.example.goodnessdays.model.Day
 import com.example.goodnessdays.ui.theme.GoodnessMonthTheme
+import kotlinx.coroutines.delay
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -77,7 +88,6 @@ fun GoodnessApp(
     modifier: Modifier = Modifier
 ) {
 
-    // done 3 : Optimize how to change between pages
     var pageNum by remember {
         mutableIntStateOf(1)
     }
@@ -86,11 +96,32 @@ fun GoodnessApp(
         mutableStateOf(false)
     }
 
-    // done 4 : Add scaffold with app name, and add Display type in typography
+    // Hint : this variable is made for app start animation
+    // that's why you won't see the app UI in preview
+    var isAppStarted by remember {
+        mutableStateOf(false) // fixme : change it to true to see the UI
+    }
+
+    LaunchedEffect(Unit) {
+        delay(300)
+        isAppStarted = true
+    }
+
+    val alpha = animateFloatAsState(
+        targetValue = if (isAppStarted) 1f else 0f,
+        animationSpec = tween(durationMillis = 1100),
+        label = "App start alpha"
+    )
 
     // Scaffold With top app bar
     Scaffold(
-        topBar = { GoodnessTopAppBar(modifier = Modifier.padding(top = 2.dp)) },
+        topBar = {
+            GoodnessTopAppBar(
+                modifier = Modifier
+                    .padding(top = 2.dp)
+                    .alpha(alpha.value)
+            )
+        },
     ) { paddingValues ->
         Column(
             modifier = modifier
@@ -100,15 +131,20 @@ fun GoodnessApp(
                 .verticalScroll(rememberScrollState())
         ) {
 
+
             // This spacer is to preserve the size of top bar from overlapping
             Spacer(modifier = Modifier.height(56.dp))
 
             Spacer(modifier = Modifier.weight(1f))
 
-            GoodnessCard(day = days[pageNum - 1],
-                modifier = Modifier.offset(y = (-60).dp),
+            GoodnessCard(
+                day = days[pageNum - 1],
+                modifier = Modifier
+                    .offset(y = (-60).dp)
+                    .alpha(alpha.value),
                 descriptionState = showDescription,
-                onCardClick = { showDescription = !showDescription })
+                onCardClick = { showDescription = !showDescription },
+            )
 
             Spacer(modifier = Modifier.weight(1f))
 
@@ -128,7 +164,8 @@ fun GoodnessApp(
                 modifier = Modifier.padding(
                     bottom = 30.dp,
                     top = 4.dp
-                )
+                ),
+                buttonsAnimationBoolean = isAppStarted
             )
         }
     }
@@ -143,7 +180,6 @@ fun GoodnessCard(
     onCardClick: () -> Unit,
     modifier: Modifier = Modifier
 ) {
-
 
     Column(
         modifier = modifier,
@@ -209,8 +245,6 @@ fun GoodnessCard(
                         .sizeIn(maxHeight = 300.dp)
                 )
 
-                // done : change contrast between icon background and card background
-
                 // Show Description Icon
                 AnimatedVisibility(visible = !descriptionState) {
                     Icon(
@@ -251,56 +285,80 @@ fun GoodnessCard(
     }
 }
 
-
-// done 2 : Add 'previous' and 'next' buttons
-
 @Composable
 fun DayButtons(
     previousOnClick: () -> Unit,
     nextOnClick: () -> Unit,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    buttonsAnimationBoolean: Boolean = false,
 ) {
     Row(
         modifier = modifier.fillMaxWidth(),
         horizontalArrangement = Arrangement.SpaceAround
     ) {
         // Previous Button
-        Button(
-            modifier = Modifier.size(
-                width = 140.dp,
-                height = 60.dp
-            ),
-            colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.error),
-            onClick = previousOnClick
+        AnimatedVisibility(
+            visible = buttonsAnimationBoolean,
+            enter = slideInHorizontally(
+                initialOffsetX = { fullWidth -> -fullWidth }, // From Left to Right
+                animationSpec = spring(
+                    dampingRatio = Spring.DampingRatioLowBouncy,
+                    stiffness = Spring.StiffnessVeryLow,
+                    visibilityThreshold = IntOffset.VisibilityThreshold
+                )
+            ) + fadeIn(),
         ) {
-            Text(
-                text = stringResource(id = R.string.previous),
-                color = MaterialTheme.colorScheme.onError,
-                style = MaterialTheme.typography.titleMedium,
-                textAlign = TextAlign.Center
-            )
+            Button(
+                modifier = Modifier.size(
+                    width = 140.dp,
+                    height = 60.dp
+                ),
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = MaterialTheme.colorScheme.error
+                ),
+                onClick = previousOnClick
+            ) {
+                Text(
+                    text = stringResource(id = R.string.previous),
+                    color = MaterialTheme.colorScheme.onError,
+                    style = MaterialTheme.typography.titleMedium,
+                    textAlign = TextAlign.Center
+                )
+            }
         }
 
         // Next Button
-        Button(
-            modifier = Modifier.size(
-                width = 140.dp,
-                height = 60.dp
-            ),
-            colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.primary),
-            onClick = nextOnClick
+        AnimatedVisibility(
+            visible = buttonsAnimationBoolean,
+            enter = slideInHorizontally(
+                initialOffsetX = { fullWidth -> fullWidth }, // From Right to Left
+                animationSpec = spring(
+                    dampingRatio = Spring.DampingRatioLowBouncy,
+                    stiffness = Spring.StiffnessVeryLow,
+                    visibilityThreshold = IntOffset.VisibilityThreshold
+                )
+            ) + fadeIn(),
         ) {
-            Text(
-                text = stringResource(id = R.string.next),
-                color = MaterialTheme.colorScheme.onPrimary,
-                style = MaterialTheme.typography.titleMedium,
-                textAlign = TextAlign.Center
-            )
+            Button(
+                modifier = Modifier.size(
+                    width = 140.dp,
+                    height = 60.dp
+                ),
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = MaterialTheme.colorScheme.primary
+                ),
+                onClick = nextOnClick
+            ) {
+                Text(
+                    text = stringResource(id = R.string.next),
+                    color = MaterialTheme.colorScheme.onPrimary,
+                    style = MaterialTheme.typography.titleMedium,
+                    textAlign = TextAlign.Center
+                )
+            }
         }
     }
 }
-
-// done 5 : Add an Icon for the app
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -319,7 +377,9 @@ fun GoodnessTopAppBar(modifier: Modifier = Modifier) {
                 )
 
                 Image(
-                    painter = if (isSystemInDarkTheme()) painterResource(id = R.drawable.mosque_icon)
+                    painter = if (isSystemInDarkTheme()) painterResource(
+                        id = R.drawable.mosque_icon
+                    )
                     else painterResource(id = R.drawable.mosque_icon_2),
                     modifier = Modifier
                         .size(54.dp)
@@ -330,7 +390,9 @@ fun GoodnessTopAppBar(modifier: Modifier = Modifier) {
                 )
             }
         },
-        colors = TopAppBarDefaults.topAppBarColors(containerColor = MaterialTheme.colorScheme.surfaceContainerHighest),
+        colors = TopAppBarDefaults.topAppBarColors(
+            containerColor = MaterialTheme.colorScheme.surfaceContainerHighest
+        ),
         modifier = modifier
     )
 }
