@@ -72,13 +72,13 @@ We welcome contributions to this project! To get started, please follow these **
 
 1. **Fork the Repository**: Click on the "Fork" button in the top-right corner of the repository page.
 
-3. **Create a New Branch**: Before making changes, create a new branch for your feature or fix
+2. **Create a New Branch**: Before making changes, create a new branch for your feature or fix
 
-4. **Test Your Changes**:
+3. **Test Your Changes**:
     - Run the tests to make sure everything works correctly.
     - Verify that your changes do not introduce any new issues.
 
-5. Create a Pull Request: Go to the original repository and click on "Pull Requests." Click on "New Pull Request," select your branch, and submit your pull request.
+4. Create a Pull Request: Go to the original repository and click on "Pull Requests." Click on "New Pull Request," select your branch, and submit your pull request.
 
 <br>
 
