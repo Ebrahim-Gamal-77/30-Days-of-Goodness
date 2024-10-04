@@ -31,8 +31,31 @@ like praying, charity, helping others, ect.
 This app has some simple animation with some images to illustrate 
 what are charitable works to do over the month.
 
-<br>
+---
+
 
 <!-- App Showcase -->
+
+<h2 align="center"> <b>App Preview</b> </h2>
+
+| <img src="docs_resources/day_1_light.jpg"> | <img src="docs_resources/day_30_dark.jpg"> | <img src="docs_resources/day_7_light.jpg"> | <img src="docs_resources/day_12_dark.jpg"> |
+| ---------------------------------------------- | -------------------------------------------- | ------------------------------------------- | ------------------------------------------- |
+
+<br>
+<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
