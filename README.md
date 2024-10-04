@@ -39,7 +39,7 @@ what are charitable works to do over the month.
 <h2 align="center"> <b>App Preview</b> </h2>
 
 | <img src="docs_resources/day_1_light.jpg"> | <img src="docs_resources/day_30_dark.jpg"> | <img src="docs_resources/day_7_light.jpg"> | <img src="docs_resources/day_12_dark.jpg"> |
-| ---------------------------------------------- | -------------------------------------------- | ------------------------------------------- | ------------------------------------------- |
+|--------------------------------------------|--------------------------------------------|--------------------------------------------|--------------------------------------------|
 
 <br>
 <br>
@@ -56,6 +56,6 @@ what are charitable works to do over the month.
 
 
 
-
+q
 
 
